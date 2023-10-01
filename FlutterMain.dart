@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blue/flutter_blue.dart';
+import 'package:http/http.dart' as http;
 
 void main() => runApp(MyApp());
 
@@ -18,50 +18,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  FlutterBlue flutterBlue = FlutterBlue.instance;
-  BluetoothDevice device;
-  BluetoothCharacteristic characteristic;
+  TextEditingController _controller = TextEditingController();
 
-  @override
-  void initState() {
-    super.initState();
-    _connectToDevice();
-  }
+  _sendCommand(String command) async {
+    String ipAddress = "ESP32_IP_ADDRESS"; // ESP32'nin IP adresini buraya ekleyin
+    var url = Uri.parse("http://$ipAddress");
+    var response = await http.post(url, body: command);
 
-  _connectToDevice() async {
-    // ESP32'yi bulun
-    List<ScanResult> devices = await flutterBlue.scan(timeout: Duration(seconds: 5));
-    for (var dev in devices) {
-      if (dev.device.name == "YourESP32") { // ESP32'nin adını buraya ekleyin
-        device = dev.device;
-        break;
-      }
+    if (response.statusCode == 200) {
+      print("Komut gönderildi: $command");
+    } else {
+      print("Komut gönderilirken hata oluştu.");
     }
-
-    // ESP32 ile bağlantı kurun
-    await device.connect();
-
-    // Karakteristiği bulun ve dinlemeye başlayın
-    List<BluetoothService> services = await device.discoverServices();
-    for (var service in services) {
-      for (var char in service.characteristics) {
-        if (char.uuid.toString() == "beb5483e-36e1-4688-b7f5-ea07361b26a8") { // Arduino'daki karakteristik UUID'sini buraya ekleyin
-          characteristic = char;
-          characteristic.setNotifyValue(true);
-          characteristic.value.listen((value) {
-            // ESP32'den gelen veriyi işleyin
-            String data = String.fromCharCodes(value);
-            print("ESP32'den gelen veri: $data");
-          });
-        }
-      }
-    }
-  }
-
-  _sendCommand(String command) {
-    // ESP32'ye komut gönderin
-    List<int> bytes = utf8.encode(command);
-    characteristic.write(bytes);
   }
 
   @override
