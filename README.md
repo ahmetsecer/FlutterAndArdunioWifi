@@ -1,21 +1,21 @@
-# Flutter ve Arduino ile Wi-Fi Üzerinden İletişim
+# Communication with Flutter and Arduino via Wi-Fi
 
-Bu proje, Flutter ve Arduino kullanarak Wi-Fi üzerinden iletişim kurmayı amaçlayan örnek bir IoT (Nesnelerin İnterneti) uygulamasını içerir. Projede, Flutter uygulaması aracılığıyla bir akıllı telefonun Wi-Fi bağlantısı kullanılarak bir Arduino (ESP8266 veya ESP32) cihazı kontrol edilir. Bu projenin amacı, mobil cihazlar ile nesnelerin interneti cihazları arasında iletişimi anlamak ve özelleştirmek için bir başlangıç noktası sağlamaktır.
+This project includes a sample IoT (Internet of Things) application that aims to communicate over Wi-Fi using Flutter and Arduino. The project controls an Arduino (ESP8266 or ESP32) device using a smartphone's Wi-Fi connection via the Flutter application. The goal of this project is to provide a starting point for understanding and customizing communication between mobile devices and IoT devices.
 
-## Proje Özellikleri
+## Project Features
 
-- Flutter ve Arduino (ESP8266 veya ESP32) kullanılarak geliştirildi.
-- Mobil uygulama ile cihaz arasındaki Wi-Fi bağlantısı üzerinden iletişim sağlar.
-- Uygulama, cihazı açma ve kapatma gibi temel işlemleri gerçekleştirebilir.
-- İletişim sırasında hata yönetimi ve güvenlik önlemleri içerir.
+- Developed using Flutter and Arduino (ESP8266 or ESP32).
+- Provides communication via Wi-Fi connection between the mobile application and the device.
+- The app can perform basic operations such as turning the device on and off.
+- Includes error management and security measures during communication.
 
-## Başlangıç
+## Beginning
 
-Proje hakkında daha fazla bilgi edinmek ve nasıl başlayacağınızı öğrenmek için [Dökümantasyon](https://github.com/ahmetsecer/FlutterAndArdunioWifi/wiki) sayfasını ziyaret edin. Dökümantasyon, projeyi yerel bir geliştirme ortamında nasıl başlatacağınızı ve mobil uygulamayı kurup çalıştıracağınızı adım adım açıklar.
+To learn more about the project and how to get started, visit [Documentation](https://github.com/ahmetsecer/FlutterAndArdunioWifi/wiki). The documentation explains step by step how to launch the project in a local development environment and install and run the mobile application.
 
 
-## İletişim
+## Communication
 
-Projeyle ilgili sorularınız veya önerileriniz varsa lütfen iletişime geçmekten çekinmeyin. Bana [e-posta gönderin](mailto:info@ahmetsecer.com) veya GitHub üzerinden [mesaj atın](https://github.com/ahmetsecer).
+If you have questions or suggestions about the project, please do not hesitate to contact us. [e-mail](mailto:info@ahmetsecer.com) or [message] me on GitHub(https://github.com/ahmetsecer).
 
-Projeyi incele: [GitHub](https://github.com/ahmetsecer/FlutterAndArdunioWifi)
+Check out the project: [GitHub](https://github.com/ahmetsecer/FlutterAndArdunioWifi)
