@@ -8,6 +8,8 @@ This project includes a sample IoT (Internet of Things) application that aims to
 - Provides communication via Wi-Fi connection between the mobile application and the device.
 - The app can perform basic operations such as turning the device on and off.
 - Includes error management and security measures during communication.
+- 
+![1696169191890](https://github.com/ahmetsecer/FlutterAndArdunioWifi/assets/60434610/787c241a-b464-47eb-b4e7-82a446593943)
 
 ## Beginning
 
